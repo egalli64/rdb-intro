@@ -22,8 +22,8 @@ drop table if exists job;
 
 -- simple: "one" region, many countries
 create table region (
-	region_id serial primary key,
-	name varchar(25)
+    region_id serial primary key,
+    name varchar(25)
 );
 
 begin;
@@ -35,11 +35,11 @@ commit;
 
 -- a "many" table with a natural PK, to one region
 create table country(
-	country_id char(2) primary key,
-	name varchar(40),
-	region_id integer,
+    country_id char(2) primary key,
+    name varchar(40),
+    region_id integer,
 
-	constraint country_region_fk foreign key (region_id) references region (region_id)
+    constraint country_region_fk foreign key (region_id) references region (region_id)
 );
 
 do $$ declare
@@ -52,7 +52,7 @@ begin
     select region_id into v_americas from region where name = 'Americas';
     select region_id into v_asia from region where name = 'Asia';
     select region_id into v_mea from region where name = 'Middle East and Africa';
-    
+
     insert into country (country_id, name, region_id) values ('AR', 'Argentina', v_americas);
     insert into country (country_id, name, region_id) values ('AU', 'Australia', v_asia);
     insert into country (country_id, name, region_id) values ('BE', 'Belgium', v_europe);
@@ -83,14 +83,14 @@ end $$;
 
 -- "many" location in one country
 create table location(
-	location_id serial primary key,
-	street_address varchar(40),
-	postal_code varchar(12),
-	city varchar(30) not null,
-	state_province varchar(25),
-	country_id char(2),
+    location_id serial primary key,
+    street_address varchar(40),
+    postal_code varchar(12),
+    city varchar(30) not null,
+    state_province varchar(25),
+    country_id char(2),
 
-	constraint location_country_fk foreign key (country_id) references country (country_id)
+    constraint location_country_fk foreign key (country_id) references country (country_id)
 );
 
 alter sequence location_location_id_seq restart with 1000 increment by 100;
@@ -125,7 +125,7 @@ begin
     select country_id into v_ch from country where name = 'Switzerland';
     select country_id into v_nl from country where name = 'Netherlands';
     select country_id into v_mx from country where name = 'Mexico';
-    
+
     insert into location (street_address, postal_code, city, state_province, country_id) values
         ('Via Cola di Rienzo, 1297', '00989', 'Roma', 'RM', v_it);
     insert into location (street_address, postal_code, city, state_province, country_id) values
@@ -177,12 +177,12 @@ end $$;
 
 -- "one" job to many employees
 create table job (
-	job_id serial primary key,
-	title varchar(35) not null,
-	min_salary integer,
-	max_salary integer,
-	
-	constraint job_salary_ck check (min_salary < max_salary)
+    job_id serial primary key,
+    title varchar(35) not null,
+    min_salary integer,
+    max_salary integer,
+
+    constraint job_salary_ck check (min_salary < max_salary)
 );
 
 begin;
@@ -209,12 +209,12 @@ commit;
 
 -- a table with a complicated relation with employee, and in the role "many" to one location
 create table department (
-	department_id serial primary key,
-	name varchar(30) not null,
-	manager_id integer,
-	location_id integer,
+    department_id serial primary key,
+    name varchar(30) not null,
+    manager_id integer,
+    location_id integer,
 
-	constraint department_location_fk foreign key (location_id) references location(location_id)
+    constraint department_location_fk foreign key (location_id) references location(location_id)
 );
 
 do $$ declare
@@ -260,21 +260,21 @@ end $$;
 
 -- the core table, with many relations (also a self - manager)
 create table employee (
-	employee_id serial primary key,
-	first_name varchar(20),
-	last_name varchar(25) not null,
-	phone integer unique not null,
-	hired date not null,
-	job_id integer not null,
-	salary numeric(8,2),
-	commission numeric(2,2),
-	manager_id integer,
-	department_id integer,
+    employee_id serial primary key,
+    first_name varchar(20),
+    last_name varchar(25) not null,
+    phone integer unique not null,
+    hired date not null,
+    job_id integer not null,
+    salary numeric(8,2),
+    commission numeric(2,2),
+    manager_id integer,
+    department_id integer,
 
-	constraint employee_salary_ck check (salary > 0),
-	constraint employee_job_fk foreign key (job_id) references job (job_id),
-	constraint employee_department_fk foreign key (department_id) references department (department_id)
-);
+    constraint employee_salary_ck check (salary > 0),
+    constraint employee_job_fk foreign key (job_id) references job (job_id),
+    constraint employee_department_fk foreign key (department_id) references department (department_id)
+    );
 
 alter sequence employee_employee_id_seq restart with 100;
 
