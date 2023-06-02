@@ -1,4 +1,10 @@
--- examples on order by
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on order by
+ */
 
 select first_name, last_name, salary 
 from employee

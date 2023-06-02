@@ -1,4 +1,10 @@
--- Examples on logical operators
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on logical operators
+ */
 
 -- a plain select
 select employee_id, first_name, last_name, department_id

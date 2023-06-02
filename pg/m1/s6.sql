@@ -1,4 +1,10 @@
--- examples on comparison operators
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on comparison operators
+ */
 
 -- equality comparison to numeric value
 select *

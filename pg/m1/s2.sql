@@ -1,11 +1,18 @@
--- Minimal SQL
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
 
+    Minimal SQL
+ */
+ 
 -- select all
 select *
 from service;
 
 -- insert a new row
-insert into service (name) values ('Scratchaway');
+insert into service (name)
+    values ('Scratchaway');
 
 -- update a row
 update service

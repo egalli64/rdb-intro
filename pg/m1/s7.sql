@@ -1,4 +1,10 @@
--- examples on Regular Expressions
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on regular expressions by operator ~
+ */
 
 -- a lowercase 'k' anywhere in a string
 select first_name, last_name
