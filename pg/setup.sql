@@ -1,8 +1,16 @@
--- this script should run on hron
--- pre requisite: once.sql
---
--- psql -U hron -d postgres
--- hron=> \i setup.sql
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+    Schema HRON Setup
+    Pre-requisite: once.sql
+
+    This script should be run by hron user
+        psql -U hron -d postgres
+        hron=> \i setup.sql
+ */
+
 
 -- cleanup
 drop table if exists team_employee;
@@ -78,7 +86,6 @@ begin
     insert into country (country_id, name, region_id) values ('US', 'United States of America', v_americas);
     insert into country (country_id, name, region_id) values ('ZM', 'Zambia', v_mea);
     insert into country (country_id, name, region_id) values ('ZW', 'Zimbabwe', v_mea);
-    commit;
 end $$;
 
 -- "many" location in one country
@@ -172,7 +179,6 @@ begin
         ('Pieter Breughelstraat 837', '3029SK', 'Utrecht', 'Utrecht', v_nl);
     insert into location (street_address, postal_code, city, state_province, country_id) values
         ('Mariano Escobedo 9991', '11932', 'Mexico City', 'Distrito Federal', v_mx);
-    commit;
 end $$;
 
 -- "one" job to many employees
@@ -255,7 +261,6 @@ begin
     insert into department (name) values ('IT Support');
     insert into department (name) values ('IT Helpdesk');
     insert into department (name) values ('Recruiting');
-    commit;
 end $$;
 
 -- the core table, with many relations (also a self - manager)
@@ -536,7 +541,6 @@ begin
         ('Kimberely', 'Grant', 9263, '2020-05-24', v_sarp, 7000, 0.10);
     insert into employee (first_name, last_name, phone, hired, job_id, salary, commission) values
         ('Charles', 'Johnson', 9262, '2021-01-04', v_sarp, 6200, 0.05);    
-    commit;
 end $$;
 
 alter table department add constraint department_manager_fk foreign key (manager_id) references employee (employee_id);

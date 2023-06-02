@@ -1,3 +1,14 @@
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+    User and Schema HRON (re)creation
+
+    DBA rights are required to run this script
+        psql -U postgres \i setup.sql
+ */
+
 -- this script should run on postgres
 --
 -- psql -U postgres \i setup.sql
