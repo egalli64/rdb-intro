@@ -6,12 +6,8 @@
     User and Schema HRON (re)creation
 
     DBA rights are required to run this script
-        psql -U postgres \i setup.sql
+        psql -U postgres \i once.sql
  */
-
--- this script should run on postgres
---
--- psql -U postgres \i setup.sql
 
 drop schema if exists hron cascade;
 drop user if exists hron;
