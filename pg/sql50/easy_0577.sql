@@ -1,6 +1,6 @@
 /*
  * LeetCode SQL 50 - https://leetcode.com/studyplan/top-sql-50/
- * 577. Employee Bonus - https://leetcode.com/problems/femployee-bonus/description/
+ * 577. Employee Bonus - https://leetcode.com/problems/employee-bonus/description/
  * 
  * Report name and bonus of each employee with a bonus less than 1000
  */
