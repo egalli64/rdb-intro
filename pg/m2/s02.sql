@@ -1,4 +1,10 @@
--- Examples on inner join
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on inner join
+ */
 
 -- without join, we get four different result set, plus one to build them up
 -- UNION could merge the results set in one

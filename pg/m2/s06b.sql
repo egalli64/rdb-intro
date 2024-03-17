@@ -1,4 +1,10 @@
--- examples on left/right outer join - from "many" perspective
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+	Examples on left/right outer join - from "many" perspective
+ */
 
 -- Treasury is a department
 select name

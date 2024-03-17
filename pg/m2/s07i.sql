@@ -1,4 +1,10 @@
--- intersect example
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+	Intersect example
+ */
 
 -- most payed employees
 select first_name, last_name, salary, department_id  

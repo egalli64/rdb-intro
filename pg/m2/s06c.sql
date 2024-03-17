@@ -1,4 +1,10 @@
--- examples on full outer join
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+	Examples on full outer join
+ */
 
 -- Ki and Kimberely
 select first_name, last_name, department_id 

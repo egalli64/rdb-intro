@@ -1,4 +1,10 @@
--- examples on inner join: using / on / natural
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+	Examples on inner join: using / on / natural
+ */
 
 -- join-using, handier
 select r.name as "region name", c.name as "country name" 

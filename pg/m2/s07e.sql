@@ -1,4 +1,10 @@
--- except example
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+	Except example
+ */
 
 -- managers
 select m.first_name first, m.last_name last

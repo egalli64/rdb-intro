@@ -1,4 +1,10 @@
--- Simplified emulation of full outer join by union
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+	Simplified emulation of full outer join by union
+ */
 
 -- Left join for department 12 + 'Grant' -> Treasury is missing
 select first_name, last_name, name, department_id

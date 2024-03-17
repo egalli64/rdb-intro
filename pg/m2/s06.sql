@@ -1,4 +1,10 @@
--- left/right outer join - from "many" perspective
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+	Left/right outer join - from "many" perspective
+ */
 
 -- Kimberely is an employee
 select employee_id, first_name, last_name, department_id 

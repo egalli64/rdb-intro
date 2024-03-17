@@ -1,4 +1,10 @@
--- examples on non-equi join
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+	Examples on non-equi join
+ */
 
 -- ex 1
 -- name of department for a given employee

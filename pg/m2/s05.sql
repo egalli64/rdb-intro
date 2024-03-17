@@ -1,4 +1,10 @@
--- examples on join on 3 tables
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+	Examples on join on 3 tables
+ */
 
 -- join using
 select e.first_name, e.last_name , d.name as "department name", l.city

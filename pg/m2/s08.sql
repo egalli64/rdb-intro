@@ -1,4 +1,10 @@
--- examples on cross join
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+	Examples on cross join
+ */
 
 -- cartesian product - SQL/92
 select r.name, s.name

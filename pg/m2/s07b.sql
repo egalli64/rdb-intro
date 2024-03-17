@@ -1,4 +1,10 @@
--- using UNION to emulate an inner join
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+	Using UNION to emulate an inner join
+ */
 
 select region_id, name
 from region;

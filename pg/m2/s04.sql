@@ -1,4 +1,10 @@
--- examples on join - on, using, classic - where
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+	Examples on join - on, using, classic - where
+ */
 
 -- join using
 select r.name as region, c.name as country

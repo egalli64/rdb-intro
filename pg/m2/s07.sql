@@ -1,4 +1,10 @@
--- union example
+/*
+    Introduction to SQL (on PostgreSQL)
+    
+    https://github.com/egalli64/hron
+
+	Union example
+ */
 
 -- two queries on two different tables...
 select title as info, 'job' as source
