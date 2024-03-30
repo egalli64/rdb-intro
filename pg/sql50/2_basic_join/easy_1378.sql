@@ -5,7 +5,7 @@
 
 -- set up for testing on the leet schema
 create table employees (
-	id int primary key, 
+	id int primary key,
 	name varchar(20)
 );
 
@@ -15,7 +15,7 @@ insert into employees (id, name) values
 create table employeeUNI (
 	id int,
 	unique_id int,
-	
+
 	primary key(id, unique_id),
 	foreign key (id) references employees(id)
 );
@@ -24,8 +24,7 @@ insert into EmployeeUNI (id, unique_id) values (3, 1), (11, 2), (90, 3);
 
 -- Find the unique ID of each user, if a user does not have a unique ID just show null
 select u.unique_id, e.name
-from employees e left outer join employeeUNI u
-    using(id);
+from employees e left outer join employeeUNI u using(id);
 
 -- cleanup of the leet schema
 drop table employeeUNI;
