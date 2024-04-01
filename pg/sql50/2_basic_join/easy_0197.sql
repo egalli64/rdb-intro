@@ -1,15 +1,6 @@
 /*
  * LeetCode SQL 50 - https://leetcode.com/studyplan/top-sql-50/
  * 197. Rising Temperature - https://leetcode.com/problems/rising-temperature/description/
- * 
- * Table: Weather
- * +---------------+---------+
- * | Column Name   | Type    |
- * +---------------+---------+
- * | id            | int     |
- * | recordDate    | date    |
- * | temperature   | int     |
- * +---------------+---------+
  */
 
 -- set up for testing on the leet schema
