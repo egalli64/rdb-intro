@@ -7,17 +7,13 @@
 
 -- set up for testing on the leet schema
 create table employee (
-	empId int primary key,
+	empId serial primary key,
 	name varchar(255),
 	supervisor int,
 	salary int
 );
 
-insert into employee values 
-	('3', 'Brad', null, '4000'),
-	('1', 'John', '3', '1000'),
-	('2', 'Dan', '3', '2000'),
-	('4', 'Thomas', '3', '4000');
+insert into employee (name, supervisor, salary) values ('John', 3, 1000), ('Dan', 3, 2000), ('Brad', null, 4000), ('Thomas', 3, 4000);
 
 create table bonus (
 	empId int primary key, 
@@ -26,7 +22,7 @@ create table bonus (
 	foreign key (empId) references employee(empId) 
 );
 
-insert into bonus values ('2', '500'), ('4', '2000');
+insert into bonus values (2, 500), (4, 2000);
 
 -- the actual exercise
 select e.name, b.bonus
