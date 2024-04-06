@@ -11,7 +11,7 @@ create table students (
 	student_name varchar(20)
 );
 
-insert into students values ('1', 'Alice'), ('2', 'Bob'), ('13', 'John'), ('6', 'Alex');
+insert into students values (1, 'Alice'), (2, 'Bob'), (13, 'John'), (6, 'Alex');
 
 create table subjects (
 	subject_name varchar(20) primary key
@@ -28,9 +28,8 @@ create table examinations (
 	foreign key (subject_name) references subjects(subject_name)
 );
 
-insert into examinations values ('1', 'Math'), ('1', 'Physics'), ('1', 'Programming'),
-	('2', 'Programming'), ('1', 'Physics'), ('1', 'Math'), ('13', 'Math'),
-	('13', 'Programming'), ('13', 'Physics'), ('2', 'Math'), ('1', 'Math');
+insert into examinations values (1, 'Math'), (1, 'Physics'), (1, 'Programming'), (2, 'Programming'), (1, 'Physics'),
+	(1, 'Math'), (13, 'Math'), (13, 'Programming'), (13, 'Physics'), (2, 'Math'), (1, 'Math');
 
 -- the actual exercise
 select s.student_id, s.student_name, u.subject_name, count(e.subject_name) as attended_exams
