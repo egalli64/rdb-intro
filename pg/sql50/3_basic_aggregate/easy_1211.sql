@@ -19,7 +19,7 @@ insert into queries (query_name, result, position, rating) values
 --     quality (average of ratio between query rating and its position) rounded to 2 decimal places
 --     poor_query_percentage (percentage of queries with rating less than 3) rounded to 2 decimal places
 select query_name,
-	round(sum(rating::numeric / position) / count(rating)::numeric, 2) quality, 
+	round(sum(rating::numeric / position) / count(rating), 2) quality,
 	round(avg(case when rating < 3 then 1 else 0 end) * 100.0, 2) poor_query_percentage 
 from queries
 where query_name is not null 
