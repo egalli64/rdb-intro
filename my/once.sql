@@ -1,10 +1,11 @@
 -- run it on MySQL as root
--- creates user and schema hron
+-- it creates user and schema hron
 
+-- firstly drop anything related with hron, if already there
 drop user if exists hron;
 drop schema if exists hron;
 
--- !!! change password !!!
+-- !!! change the password with a safe one !!!
 create user hron identified by 'password';
 create schema hron;
 
@@ -13,6 +14,7 @@ grant alter routine on hron.* to hron;
 
 use hron;
 
+-- the following procedure is used to simplify the setup script
 DELIMITER //
 
 create procedure drop_fk_if_exists(
@@ -33,4 +35,3 @@ end;
 
 //
 DELIMITER ;
-
