@@ -19,7 +19,7 @@ drop table if exists job;
 drop procedure if exists get_employee_car;
 drop procedure if exists get_employee_salary;
 
--- simple: "one" region, many countries
+-- a table in a relation one to many: "one" region, "many" countries
 create table region(
 	region_id integer primary key auto_increment,
 	name varchar(25)
@@ -32,7 +32,7 @@ insert into region (name) values
     ('Middle East and Africa');
 commit;
 
--- a "many" table with a natural PK, to one region
+-- a table in a many to one relation: "many" countries to "one" region
 create table country(
 	country_id char(2) primary key,
 	name varchar(40),
