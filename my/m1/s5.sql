@@ -1,4 +1,10 @@
--- examples on null
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on NULL
+ */
 use hron;
 
 -- check null
