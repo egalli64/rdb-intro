@@ -1,4 +1,10 @@
--- examples on inner join
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on inner join
+ */
 use hron;
 
 -- name of a region and name of countries for that region
