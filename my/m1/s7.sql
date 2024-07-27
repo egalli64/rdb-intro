@@ -1,7 +1,13 @@
--- examples on sorting
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on ordering
+ */
 use hron;
 
--- a plain sorted query
+-- a plain query generating an ordered resultset 
 select first_name, last_name
 from employee
 order by last_name;
@@ -31,6 +37,10 @@ order by salary desc;
 -- positional notation
 select first_name, last_name
 from employee order by 1, 2;
+
+-- using alias
+select first_name name, last_name surname
+from employee order by name, surname;
 
 -- ...
 select first_name, last_name, hired
