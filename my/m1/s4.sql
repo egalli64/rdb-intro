@@ -1,4 +1,10 @@
--- examples on logical operators
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on logical operators
+ */
 use hron;
 
 select *
