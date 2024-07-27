@@ -1,4 +1,10 @@
--- examples on comparison operators
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on comparison operators
+ */
 use hron;
 
 -- equality
@@ -6,12 +12,12 @@ select *
 from region
 where region_id = 1;
 
--- difference
+-- inequality
 select *
 from region
 where region_id != 2;
 
--- difference, alternative notation
+-- inequality, alternative notation
 select *
 from region
 where region_id <> 2;
