@@ -1,4 +1,10 @@
--- examples on select
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on select
+ */
 use hron;
 
 -- select all
