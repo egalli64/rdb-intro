@@ -1,4 +1,10 @@
--- examples on join on 3 tables
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on join on 3 tables
+ */
 use hron;
 
 -- extra info on employees - SQL/92
