@@ -1,4 +1,10 @@
--- examples on left/right outer join - from "one" perspective
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples left/right outer join - from "one" perspective
+ */
 use hron;
 
 -- Treasury is a department
