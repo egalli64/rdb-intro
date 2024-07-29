@@ -1,4 +1,10 @@
--- example on union
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    An example on union
+ */
 use hron;
 
 -- two queries on two different tables...
