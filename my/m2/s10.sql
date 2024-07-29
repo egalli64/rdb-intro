@@ -1,4 +1,10 @@
--- examples on non-equi join
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on non-equi join
+ */
 use hron;
 
 -- ex 1
@@ -20,7 +26,7 @@ from department d join employee e
 on d.department_id != e.department_id
 where e.employee_id = 107 and d.manager_id is not null;
 
--- Diana change job wants to go to Seattle
+-- Diana changes job, and she wants to go to Seattle
 select d.name
 from department d join employee e
 on d.department_id != e.department_id
