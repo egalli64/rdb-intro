@@ -1,4 +1,10 @@
--- examples on cross join
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on cross join
+ */
 use hron;
 
 -- cartesian product - following the SQL/92 syntax
