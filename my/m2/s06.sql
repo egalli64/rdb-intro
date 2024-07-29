@@ -1,10 +1,16 @@
--- examples on left/right outer join - from "many" perspective
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples left/right outer join - from "many" perspective
+ */
 use hron;
 
--- Kimberely is an employee not associated to a department
+-- Kimberely Grant is the only employee not associated to a department
 select first_name, last_name, department_id
 from employee
-where last_name like 'Gr%';
+where last_name like 'Gr%' or department_id is null;
 
 -- the inner join skips Kimberely
 select e.first_name, e.last_name, d.name as department
