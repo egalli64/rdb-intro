@@ -1,4 +1,10 @@
--- examples on group by - having
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on group by - having
+ */
 use hron;
 
 -- group by department and job, but keep only the departments having name ending in 'ing'
