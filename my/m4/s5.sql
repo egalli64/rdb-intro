@@ -1,4 +1,10 @@
--- examples on subquery
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on subquery
+ */
 use hron;
 
 -- A) Employees in the IT department
