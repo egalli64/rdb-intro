@@ -1,4 +1,10 @@
--- examples on aggregate functions
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on aggregate functions
+ */
 use hron;
 
 -- count, count distinct
