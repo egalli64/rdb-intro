@@ -1,4 +1,10 @@
--- examples on casting
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on casting
+ */
 use hron;
 
 -- explicit cast to char
