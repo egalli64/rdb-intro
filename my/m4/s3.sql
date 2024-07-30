@@ -1,4 +1,10 @@
--- examples on group by - having
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on group by - having
+ */
 use hron;
 
 select round(avg(salary)) sal, department_id 
