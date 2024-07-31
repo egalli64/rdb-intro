@@ -1,4 +1,10 @@
--- examples on insert
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on insert
+ */
 use hron;
 
 -- check the current table status
