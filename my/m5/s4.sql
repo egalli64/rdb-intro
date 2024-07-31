@@ -1,4 +1,10 @@
--- examples on delete
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on delete
+ */
 use hron;
 
 -- check the current table status
