@@ -1,4 +1,10 @@
--- examples on truncate / drop table
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on truncate / drop table
+ */
 use hron;
 
 -- get rid of all rows (DML)
