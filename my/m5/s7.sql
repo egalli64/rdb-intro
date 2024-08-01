@@ -1,4 +1,10 @@
--- examples on transaction anomalies
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on transaction anomalies -- see s7T2.sql for the other transaction code
+ */
 use hron;
 
 -- phantom read
