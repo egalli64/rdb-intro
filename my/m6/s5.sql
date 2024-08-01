@@ -1,4 +1,10 @@
--- examples on alter table
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on alter table
+ */
 use hron;
 
 -- check the current table status
