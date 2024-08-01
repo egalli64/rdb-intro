@@ -1,4 +1,10 @@
--- examples on transaction isolation levels
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on transaction isolation levels -- see s8.sql for the other transaction code
+ */
 use hron;
 
 -- both transactions serialized, no phantom read

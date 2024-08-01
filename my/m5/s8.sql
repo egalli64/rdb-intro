@@ -1,4 +1,10 @@
--- examples on transaction isolation levels
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on transaction isolation levels -- see s8T2.sql for the other transaction code
+ */
 use hron;
 
 -- cleanup
@@ -38,4 +44,3 @@ start transaction; -- (2)
 commit; -- (4)
 select * from service where service_id = 22; -- (5) both 1 and 2, no lost update!
 commit;
-
