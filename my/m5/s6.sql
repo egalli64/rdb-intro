@@ -1,4 +1,10 @@
--- examples on transaction
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on transaction
+ */
 use hron;
 
 -- current status
@@ -6,6 +12,9 @@ select * from service;
 
 -- autocommit on
 set autocommit = true;
+
+-- the examples are on service 20, if not there, insert it
+-- insert into service values (20, 'Test', 2);
 
 -- change a row
 update service set name = 'Car 42' where service_id = 20;
@@ -43,3 +52,7 @@ commit; -- persist Example 1
 -- rollback after commit is useless
 rollback;
 select * from service;
+
+-- if you need some cleanup on the table
+-- delete from service where service_id > 10;
+-- commit;
