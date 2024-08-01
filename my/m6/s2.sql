@@ -1,4 +1,10 @@
--- examples on create table
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on create table
+ */
 use hron;
 
 -- create a simple table with a primary key
