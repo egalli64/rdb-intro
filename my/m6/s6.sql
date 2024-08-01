@@ -1,4 +1,10 @@
--- examples on index
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on index
+ */
 use hron;
 
 -- index on a column
