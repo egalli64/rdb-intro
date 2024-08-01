@@ -1,4 +1,10 @@
--- examples on view
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on view
+ */
 use hron;
 
 -- check existing table
