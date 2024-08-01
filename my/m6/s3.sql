@@ -1,4 +1,10 @@
--- examples on constraints in create table statement
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples on constraints in create table statement
+ */
 use hron;
 
 create table constrained (
