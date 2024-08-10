@@ -119,3 +119,55 @@ where v.name = 'Onionville';
 select count(*)
 from inhabitant, village
 where village.villageid = inhabitant.villageid and village.name = 'Onionville';
+
+-- Task 16: how many women there are in Onionville?
+select count(*)
+from village v join inhabitant i
+using (villageid)
+where v.name = 'Onionville' and i.gender = 'f';
+
+-- Task 17: name of the only woman in Onionville
+select i.name
+from village v join inhabitant i
+using (villageid)
+where v.name = 'Onionville' and i.gender = 'f';
+
+-- Given: total gold of Cucumbertown inhabitants
+select sum(inhabitant.gold)
+from inhabitant, village
+where village.villageid = inhabitant.villageid and village.name = 'Cucumbertown';
+
+-- Task 18: total gold owned by bakers, dealers and merchants
+select sum(gold)
+from inhabitant
+where job in ('baker', 'dealer', 'merchant');
+
+-- Given: average gold, depending on job
+select job, sum(inhabitant.gold), avg(inhabitant.gold) average
+from inhabitant
+group by job
+order by average;
+
+-- Task 19: average gold, depending on state
+select state, avg(inhabitant.gold) average
+from inhabitant
+group by state
+order by average;
+
+-- Given: Kill 'Dirty Dieter'
+delete from inhabitant
+where name = 'Dirty Dieter';
+
+-- Task 20: kill 'Dirty Diane'
+delete from inhabitant
+where name = 'Dirty Diane';
+
+-- Task 21: free the kidnapped guy
+update inhabitant
+set state = 'friendly'
+where state = 'kidnapped';
+
+-- Given: leave the island
+update inhabitant
+set state = 'emigrated'
+where personid = 20
