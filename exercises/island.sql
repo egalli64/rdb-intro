@@ -1,5 +1,7 @@
 /*
- * SQL Island - https://sql-island.informatik.uni-kl.de/ 
+ * SQL Island - https://sql-island.informatik.uni-kl.de/?lang=en 
+ * 
+ * Game saved with ID: Wz8BfH1vre
  */
 
 -- Given: list of villages
@@ -62,3 +64,58 @@ where owner is null;
 select *
 from item
 where owner = 20;
+
+-- Task 10: Find a friendly dealer or merchant inhabitant
+select *
+from inhabitant
+where state = 'friendly' and job in ('dealer', 'merchant');
+
+-- Task 11: Set 15 as owner for 'ring' and 'teapot'
+update item
+set owner = 15
+where item in ('ring', 'teapot');
+
+-- Given: increase Stranger gold by 120
+update inhabitant
+set gold = gold + 120
+where personid = 20;
+
+-- Task 12: Change the Stranger name 
+update inhabitant
+set name = 'Manny'
+where personid = 20;
+
+-- Task 13: List bakers ordered by gold, from the richest one
+select *
+from inhabitant
+where job = 'baker'
+order by gold desc;
+
+-- Given: Change Manny gold
+update inhabitant
+set gold = gold + 100 - 150 
+where personid = 20;
+
+-- Given: add sword among Manny items
+insert into item (item, owner) VALUES ('sword', 20);
+
+-- Task 14: Check for pilots
+select *
+from inhabitant
+where job = 'pilot';
+
+-- Given: find the village where 'Dirty Dieter' lives
+select village.name
+from village, inhabitant
+where village.villageid = inhabitant.villageid and inhabitant.name = 'Dirty Dieter';
+
+-- Task 15: find the name of the 'Onionville' 'chief'
+select i.name
+from village v join inhabitant i
+on v.chief = i.personid
+where v.name = 'Onionville';
+
+-- Given: inhabitants in Onionville
+select count(*)
+from inhabitant, village
+where village.villageid = inhabitant.villageid and village.name = 'Onionville';
