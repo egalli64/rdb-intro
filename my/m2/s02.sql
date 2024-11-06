@@ -26,11 +26,11 @@ from country
 where region_id = 4;
 
 -- join the two tables and see the full result in a single shot
-select region.region_id as r_id, region.name, country_id, country.name
+select region.region_id as 'Region Id', region.name, country_id, country.name
 from region, country
 where region.region_id = country.region_id;
 
 -- using table (and column) aliases
-select r.region_id as r_id, r.name as 'Region Name', c.name as Country
+select r.region_id as 'Region Id', r.name as 'Region Name', c.name as Country
 from region r, country c
 where r.region_id = c.region_id;
