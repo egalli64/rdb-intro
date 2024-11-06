@@ -18,7 +18,7 @@ from region r join country c
 using (region_id);
 
 -- join-on, flexible
-select r.name as region, c.name as country
+select r.name as 'Region Name', c.name as 'Country Name'
 from region r join country c
 on r.region_id = c.region_id;
 
