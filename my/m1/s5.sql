@@ -25,7 +25,7 @@ where last_name = 'King' and commission is not null;
 -- !!! WRONG  - no row is returned !!!
 select employee_id, first_name, last_name, commission
 from employee
-where last_name = 'King' and commission != null;
+where last_name = 'King' and commission != null; -- !!! WRONG !!!
 
 -- null in operations, null is returned
 select first_name, last_name, salary * commission
