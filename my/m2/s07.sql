@@ -8,7 +8,7 @@
 use hron;
 
 -- two queries on two different tables...
-select title, 'job' as origin
+select title, 'job' as 'origin'
 from job
 where title like 'P%';
 
@@ -17,7 +17,7 @@ from department
 where name like 'P%';
 
 -- ... could give a combined result set
-	select title as name, 'job' as origin
+	select title as name, 'job' as 'origin'
 	from job
 	where title like 'P%'
 union
