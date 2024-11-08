@@ -7,10 +7,22 @@
  */
 use hron;
 
--- extra info on employees - SQL/92
+-- extra info on employees - SQL/92 (JOIN - USING)
 select e.first_name, e.last_name, d.name as department, l.city
 from employee e join department d using (department_id)
 	join location l using (location_id);
+
+-- SQL/92 (JOIN - ON)
+select e.first_name, e.last_name, d.name as department, l.city
+from employee e join department d
+	on e.department_id = d.department_id
+	join location l on l.location_id = d.location_id;
+
+-- SQL/92 (JOIN - ON, navigating in the other direction)
+select e.first_name, e.last_name, d.name as department, l.city
+from location l join department d
+	on l.location_id = d.location_id
+	join employee e on d.department_id = e.department_id;
 
 -- extra info on employees - classic
 select e.first_name, e.last_name, d.name as department, l.city
