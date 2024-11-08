@@ -17,6 +17,7 @@ select e.first_name, e.last_name, d.name
 from employee e inner join department d
 using (department_id)
 where d.department_id in (11, 12);
+-- where d.name in ("Accounting", "Treasury");
 
 -- right outer join
 select e.first_name, e.last_name, d.name
