@@ -36,14 +36,16 @@ order by salary desc;
 
 -- positional notation
 select first_name, last_name
-from employee order by 1, 2;
+from employee
+order by 1, 2;
 
 -- using alias
 select first_name name, last_name surname
-from employee order by name, surname;
+from employee
+order by name, surname;
 
--- ...
-select first_name, last_name, hired
+-- ordering by a column not included in the select clause
+select first_name, last_name
 from employee
 where first_name like 'c%'
-order by 3 desc;
+order by hired desc;
