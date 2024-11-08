@@ -73,15 +73,17 @@ select last_name
 from employee
 where last_name like '___';
 
--- implicit cast to string before checking the pattern
+-- implicit cast from DATE to VARCHAR before checking the pattern
 select last_name, first_name, hired
 from employee
 where hired like '2015%';
 
+-- implicit cast from VARCHAR to DATE before comparation
 select last_name, first_name, hired
 from employee
-where hired >= '2021-05-21';
+where hired >= '2020-05-21';
 
+-- the DATE, implicitly converted to VARCHAR, should match the given pattern
 select last_name, first_name, hired
 from employee
 where hired like '____-05-__';
@@ -90,6 +92,7 @@ where hired like '____-05-__';
 select *
 from region
 where region_id between 1 and 3;
+-- where region_id >= 1 and region_id <= 3;
 
 -- "between" strings
 select *
