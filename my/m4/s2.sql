@@ -7,8 +7,14 @@
  */
 use hron;
 
--- count, count distinct
-select count(*), count(manager_id), count(distinct manager_id), count(commission)
+select * from employee;
+
+-- count
+select count(*), count(manager_id), count(commission)
+from employee;
+
+-- count distinct
+select count(distinct manager_id), count(distinct commission)
 from employee;
 
 -- max, min
