@@ -10,12 +10,14 @@ use hron;
 -- Kimberely Grant is the only employee not associated to a department
 select first_name, last_name, department_id
 from employee
-where last_name like 'Gr%' or department_id is null;
+where last_name like 'Gr%';
+-- where department_id is null;
 
 -- the inner join skips Kimberely
 select e.first_name, e.last_name, d.name as department
 from employee e inner join department d
-using (department_id)
+-- using (department_id)
+on e.department_id = d.department_id
 where e.last_name like 'Gr%';
 
 -- left outer join preserves Kimberely, giving NULL for the department columns
