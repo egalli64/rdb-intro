@@ -22,3 +22,11 @@ where service_id > 10;
 -- even more careful here!
 -- anyway this statement won't work, for referential integrity problems
 delete from service;
+
+-- this table has a many to on relation with service
+describe car_service;
+
+select * from car_service;
+
+-- deleting all rows from it first makes delete from service working
+delete from car_service;
