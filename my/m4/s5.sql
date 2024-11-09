@@ -9,11 +9,12 @@ use hron;
 
 -- A) Employees in the IT department
 
--- A1) Get the id of the IT department, then query the employee table
+-- A1) Get the id of the IT department ...
 select department_id
 from department
 where name = 'IT';
 
+-- ... then query the employee table
 select concat(first_name, ' ', last_name) as IT
 from employee
 where department_id = 6;
@@ -77,10 +78,10 @@ where employee_id in (
 
 -- D) subquery in select - group by - having + another one in select - from
 -- D1) average salaries for each department
-select avg(salary)
+select avg(salary) as avg_sal
 from employee
 group by department_id
-order by 1 desc;
+order by avg_sal desc;
 
 -- D2) highest salary among the average salary for each department
 select max(tmp.avg_sal) from (
@@ -89,14 +90,17 @@ select max(tmp.avg_sal) from (
 	group by department_id) tmp;
 
 -- D3) average salaries for each department (no null), excluding the topmost one
-select department_id, round(avg(salary))
+select department_id, round(avg(salary)) as avg_sal
 from employee
-group by department_id having avg(salary) < (select max(x.sal) from (
-	select avg(salary) sal
-	from employee
-	group by department_id) x
-    where department_id is not null)
-order by 2 desc;
+group by department_id 
+having avg(salary) < (
+	select max(x.sal) from (
+		select avg(salary) sal, department_id
+		from employee
+		group by department_id) x
+    where x.department_id is not null
+    )
+order by avg_sal desc;
 
 -- E) how many countries for each region
 -- subquery in select - from - join
