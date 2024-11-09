@@ -29,10 +29,19 @@ where service_id > 10;
 update service
 set name = 'mistake!?';
 
+-- you can choose between committing or rolling back
+rollback;
+commit;
+
 -- check the current salary for IT people
-select e.first_name, e.last_name, e.salary
+select e.first_name, e.last_name, e.salary, e.manager_id
 from employee e join department d using (department_id)
 where d.name = 'IT';
+
+-- before building a subquery could be a good idea to test it as a stand-alone querys
+select manager_id
+from department
+where name = 'IT';
 
 -- update - where subquery
 -- assuming department name is not duplicated!
@@ -41,4 +50,5 @@ set salary = salary + 100
 where manager_id = (
 	select manager_id
 	from department
-	where name = 'IT');
+	where name = 'IT'
+);
