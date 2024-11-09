@@ -10,10 +10,18 @@ use hron;
 -- check the current table structure
 describe service;
 
--- check the current table values (and its associated city in the location table)
+-- get the current table values (and its associated city in the location table)
 select s.*, l.city
 from service s left outer join location l
 using (location_id);
+
+--  get just the current table values
+select *
+from service;
+
+-- get the current location values
+select location_id, city
+from location;
 
 -- plain insert
 insert into service (service_id, name, location_id) values
