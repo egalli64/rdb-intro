@@ -11,24 +11,23 @@ use hron;
 select department_id, count(*) as 'nr'
 from employee
 group by department_id
-order by nr desc;
+order by 'nr' desc;
 
 -- group the employees by department id and job id, count them
 select department_id, job_id, count(*) as 'nr'
 from employee
 group by department_id, job_id;
 
+-- !!! WRONG - last_name is not functionally dependent from department_id
+-- select last_name
+-- from employee
+-- group by department_id;
+
 -- ...
 select round(avg(salary)) as avg_sal, round(max(salary)) as max_sal, department_id 
 from employee
 group by department_id
 order by avg_sal desc;
-
--- ...
-select first_name, round(avg(salary)) as sal, max(salary), department_id 
-from employee
-group by department_id
-order by sal desc;
 
 -- grouping by department and then by job
 select round(avg(salary)) sal, department_id, job_id
@@ -41,7 +40,7 @@ from employee
 group by department_id
 order by sal desc;
 
--- with a join the result set becomes more interesting
+-- with a join the result set becomes more interesting - d.name is functionally dependent to department_id by JOIN
 select round(avg(salary)) sal, d.name as Department, j.title as 'Job Title'
 from department d right outer join employee e using (department_id)
 	join job j using (job_id)
