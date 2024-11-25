@@ -37,9 +37,11 @@ commit;
 
 -- a table in a many to one relation: "many" countries to "one" region
 create table country(
+	-- natural primary key
 	country_id char(2) primary key,
 	name varchar(40),
-	region_id integer,
+	-- each country has an associated region
+	region_id integer not null,
 
     foreign key (region_id) references region (region_id)
 );
@@ -80,7 +82,8 @@ insert into country (country_id, name, region_id) values
     ('ZW', 'Zimbabwe', 4);
 commit;
 
--- "many" locations to many departments
+-- "many" locations to "one" country
+-- and "one" location for "many" departments
 create table location(
 	location_id integer primary key auto_increment,
 	street_address varchar(40),
@@ -134,7 +137,7 @@ insert into location (street_address, postal_code, city, state_province, country
     ('Mariano Escobedo 9991', '11932', 'Mexico City', 'Distrito Federal', @mx);
 commit;
 
--- "one" job to many employees
+-- "one" job to "many" employees
 create table job(
 	job_id integer primary key auto_increment,
 	title varchar(35) not null,
