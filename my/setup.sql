@@ -10,6 +10,7 @@ drop table if exists team;
 drop table if exists car_service;
 drop table if exists service;
 drop table if exists car;
+-- this call is required to sort a non trivial relation between department and employee table
 call drop_fk_if_exists('department', 'department_manager_fk');
 drop table if exists employee;
 drop table if exists department;
@@ -44,37 +45,39 @@ create table country(
 );
 
 -- FK from region table
-select region_id into @europe from region where name = 'Europe';
-select region_id into @americas from region where name = 'Americas';
-select region_id into @asia from region where name = 'Asia';
-select region_id into @mea from region where name = 'Middle East and Africa';
+-- using variables lead to more robust code
+-- however, here we are relying on the natural order followed by auto_increment 
+-- select region_id into @europe from region where name = 'Europe';
+-- select region_id into @americas from region where name = 'Americas';
+-- select region_id into @asia from region where name = 'Asia';
+-- select region_id into @mea from region where name = 'Middle East and Africa';
 
 insert into country (country_id, name, region_id) values
-	('AR', 'Argentina', @americas),
-    ('AU', 'Australia', @asia),
-    ('BE', 'Belgium', @europe),
-    ('BR', 'Brazil', @americas),
-    ('CA', 'Canada', @americas),
-    ('CH', 'Switzerland', @europe),
-    ('CN', 'China', @asia),
-    ('DE', 'Germany', @europe),
-    ('DK', 'Denmark', @europe),
-    ('EG', 'Egypt', @mea),
-    ('FR', 'France', @europe),
-    ('IL', 'Israel', @mea),
-    ('IN', 'India', @asia),
-    ('IT', 'Italy', @europe),
-    ('JP', 'Japan', @asia),
-    ('KW', 'Kuwait', @mea),
-    ('ML', 'Malaysia', @asia),
-    ('MX', 'Mexico', @americas),
-    ('NG', 'Nigeria', @mea),
-    ('NL', 'Netherlands', @europe),
-    ('SG', 'Singapore', @asia),
-    ('UK', 'United Kingdom', @europe),
-    ('US', 'United States of America', @americas),
-    ('ZM', 'Zambia', @mea),
-    ('ZW', 'Zimbabwe', @mea);
+	('AR', 'Argentina', 2), -- 2 is for Americas
+    ('AU', 'Australia', 3), -- 3 is for Asia
+    ('BE', 'Belgium', 1), -- 1 is for Europe
+    ('BR', 'Brazil', 2),
+    ('CA', 'Canada', 2),
+    ('CH', 'Switzerland', 1),
+    ('CN', 'China', 3),
+    ('DE', 'Germany', 1),
+    ('DK', 'Denmark', 1),
+    ('EG', 'Egypt', 4), -- 4 is for Middle East and Africa
+    ('FR', 'France', 1),
+    ('IL', 'Israel', 4),
+    ('IN', 'India', 3),
+    ('IT', 'Italy', 1),
+    ('JP', 'Japan', 3),
+    ('KW', 'Kuwait', 4),
+    ('ML', 'Malaysia', 3),
+    ('MX', 'Mexico', 2),
+    ('NG', 'Nigeria', 4),
+    ('NL', 'Netherlands', 1),
+    ('SG', 'Singapore', 3),
+    ('UK', 'United Kingdom', 1),
+    ('US', 'United States of America', 2),
+    ('ZM', 'Zambia', 4),
+    ('ZW', 'Zimbabwe', 4);
 commit;
 
 -- "many" locations to many departments
@@ -215,9 +218,9 @@ create table employee(
 	last_name varchar(25) not null,
 	phone integer unique not null,
 	hired date not null,
-	job_id integer not null,
 	salary decimal(8,2),
 	commission decimal(2,2),
+	job_id integer not null,
 	manager_id integer,
 	department_id integer,
 
@@ -589,6 +592,11 @@ begin
 	from car
 	where employee_id = p_employee_id;
 end;
+
+//
+DELIMITER ;
+
+DELIMITER //
 
 CREATE PROCEDURE get_employee_salary(
 	in p_employee_id integer,
