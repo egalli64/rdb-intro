@@ -32,7 +32,12 @@ select first_name, last_name, salary * commission
 from employee
 where last_name = 'King';
 
--- using ifnull() to get rid of null
+-- using coalesce() to get rid of null
+select employee_id, first_name, last_name, salary * coalesce(commission, 0) as 'monthly commission'
+from employee
+where last_name = 'King';
+
+-- using MySQL ifnull() to get rid of null
 select employee_id, first_name, last_name, salary * ifnull(commission, 0) as 'monthly commission'
 from employee
 where last_name = 'King';
