@@ -5,6 +5,10 @@
 
     Minimal SQL
  */
+
+-- MySQL feature to disable autocommit
+-- OFF = 0 and ON = 1
+ set autocommit = OFF;
  
 -- select all
 select *
@@ -17,8 +21,11 @@ insert into service (name)
 -- update a row
 update service
 set location_id = 13
-where name = 'Scratchaway';
+where service_id = 1;
 
 -- delete a row
 delete from service
 where name = 'Scratchaway';
+
+-- do not confirm the changes
+rollback;
