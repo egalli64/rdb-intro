@@ -6,17 +6,19 @@
     Minimal SQL
  */
 
--- MySQL feature to disable autocommit
--- OFF = 0 and ON = 1
- set autocommit = OFF;
- 
+-- MySQL feature to disable autocommit: OFF = 0 and ON = 1
+set autocommit = OFF;
+
+-- Ensure to work in the specified schema
+use hron;
+
 -- select all
 select *
 from service;
 
 -- insert a new row
 insert into service (name)
-    values ('Scratchaway');
+values ('Scratchaway');
 
 -- update a row
 update service
