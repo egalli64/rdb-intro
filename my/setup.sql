@@ -19,9 +19,6 @@ drop table if exists country;
 drop table if exists region;
 drop table if exists job;
 
-drop procedure if exists get_employee_car;
-drop procedure if exists get_employee_salary;
-
 -- a table in a relation one to many: "one" region, "many" countries
 create table region(
 	region_id integer primary key auto_increment,
@@ -582,38 +579,6 @@ insert into car (name, employee_id) values
  ('Ruby', @mng_fi),
  ('Tortoise', @mng_ac);
 commit;
-
-DELIMITER //
-
-CREATE PROCEDURE get_employee_car(
-	in p_employee_id integer,
-    out p_car_name varchar(40)
-)
-begin
-	select name
-	into p_car_name
-	from car
-	where employee_id = p_employee_id;
-end;
-
-//
-DELIMITER ;
-
-DELIMITER //
-
-CREATE PROCEDURE get_employee_salary(
-	in p_employee_id integer,
-    out p_salary decimal(8, 2)
-)
-begin
-	select salary
-	into p_salary
-	from employee
-	where employee_id = p_employee_id;
-end;
-
-//
-DELIMITER ;
 
 -- simple table in many-to-many releation with employee
 create table team(
