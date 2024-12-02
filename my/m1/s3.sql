@@ -24,11 +24,11 @@ from employee;
 select distinct manager_id
 from employee;
 
--- select with changes on values and column names
+-- select with changes in the resultset on values and column names (by alias)
 select title, min_salary, min_salary * 2 as 'doubled min salary'
 from job;
 
--- other ways to specify column aliases
+-- the keyword "as" is not mandatory for column alias
 select title, min_salary as min, max_salary max
 from job;
 
@@ -36,9 +36,10 @@ from job;
 select current_date;
 -- from dual;
 
+-- calling a mathematic function known by the DBMS
 select sqrt(25);
 
--- concatenation
+-- concatenation on values from tables
 select concat(region_id, ': ' ,country_id) as 'the countries'
 from country;
 
@@ -47,6 +48,7 @@ select first_name, last_name
 from employee
 limit 10;
 
+-- column alias for a concat()
 select concat(last_name, ' ', first_name) as name
 from employee
 limit 3;
