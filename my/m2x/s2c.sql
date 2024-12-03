@@ -33,6 +33,6 @@ order by r_id, name;
 
 -- The join is much more compact and readable
 select r.region_id as r_id, r.name as region, c.country_id, c.name
-from country c join region r
-using(region_id)
+from country c
+join region r using(region_id)
 order by r_id, name;
