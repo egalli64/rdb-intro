@@ -7,20 +7,20 @@
  */
 use hron;
 
--- join using
+-- "classic" join - where is both for join _and_ filtering
+select r.name as region, c.name as country
+from region r, country c
+where r.region_id = c.region_id
+  and r.name = 'Europe';
+
+-- join using - simple but limited
 select r.name as region, c.name as country
 from region r join country c
 using (region_id)
 where r.name = 'Europe';
 
--- join on
+-- join on - clear and with full functionality
 select r.name as region, c.name as country
 from region r join country c
 on r.region_id = c.region_id
 where r.region_id = 1;
-
--- "classic" join
-select r.name as region, c.name as country
-from region r, country c
-where r.region_id = c.region_id 
- and r.name = 'Europe';
