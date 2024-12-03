@@ -14,19 +14,19 @@ where department_id in (11, 12);
 
 -- the inner join skips Treasury
 select e.first_name, e.last_name, d.name
-from employee e inner join department d
-using (department_id)
+from employee e
+inner join department d using (department_id)
 where d.department_id in (11, 12);
 -- where d.name in ("Accounting", "Treasury");
 
 -- right outer join
 select e.first_name, e.last_name, d.name
-from employee e right outer join department d
-using (department_id)
+from employee e
+right outer join department d using (department_id)
 where d.department_id in (11, 12);
 
 -- as above, rewritten as left outer join
 select e.first_name, e.last_name, d.name
-from department d left outer join employee e
-using (department_id)
+from department d
+left outer join employee e using (department_id)
 where d.department_id in (11, 12);
