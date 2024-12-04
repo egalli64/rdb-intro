@@ -42,8 +42,9 @@ order by sal desc;
 
 -- with a join the result set becomes more interesting - d.name is functionally dependent to department_id by JOIN
 select round(avg(salary)) sal, d.name as Department, j.title as 'Job Title'
-from department d right outer join employee e using (department_id)
-	join job j using (job_id)
+from department d
+right outer join employee e using (department_id)
+join job j using (job_id)
 group by department_id, job_id;
 
 -- average salary for all the employees
@@ -51,14 +52,15 @@ select round(avg(salary), 2) as 'avg salary'
 from employee;
 
 -- average salary for each department
-select department_id, round(avg(salary)) as 'avg salary'
+select department_id, round(avg(salary)) as Average
 from employee
 group by department_id
-order by 'avg salary' desc;
+order by Average desc;
 
 -- average salary for each department, only for most junior employees
-select d.location_id, d.name, round(avg(e.salary)) as avg  
-from employee e left outer join department d using (department_id)
+select d.location_id, d.name, round(avg(e.salary)) as Average
+from employee e
+left outer join department d using (department_id)
 where e.hired > '2019-12-31'
-group by e.department_id -- d.name
-order by avg desc;
+group by e.department_id -- d.name won't work
+order by Average desc;

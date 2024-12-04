@@ -7,7 +7,8 @@
  */
 use hron;
 
-select * from employee;
+select *
+from employee;
 
 -- count
 select count(*), count(manager_id), count(commission)
