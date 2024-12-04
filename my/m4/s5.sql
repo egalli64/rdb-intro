@@ -21,8 +21,8 @@ where department_id = 6;
 
 -- A2) Same, but with a join
 select concat(e.first_name, ' ', e.last_name) as IT
-from employee e join department d
-using (department_id)
+from employee e
+join department d using (department_id)
 where d.name = 'IT';
 
 -- A3) Same, but with a subquery
@@ -48,8 +48,8 @@ where employee_id = 108;
 
 -- B2) Same, but using a self join
 select concat(m.first_name, ' ', m.last_name) as Manager
-from employee e join employee m
-on e.manager_id = m.employee_id
+from employee e 
+join employee m on e.manager_id = m.employee_id
 where e.first_name = 'John' and e.last_name = 'Chen';
 
 -- B3) Same, but using a subquery
