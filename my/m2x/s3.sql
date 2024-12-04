@@ -13,11 +13,13 @@ select * from region;
 
 -- cartesian product - following the SQL/92 syntax
 select r.name, s.name
-from region r cross join service s;
+from region r
+cross join service s;
 
--- cartesian product - non SQL/92 compliant!
+-- cartesian product - for MySQL is OK, non SQL/92 compliant!
 select r.name, s.name
-from region r join service s;
+from region r
+join service s;
 
 -- "classic" cartesian product
 select r.name, s.name
