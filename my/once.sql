@@ -5,6 +5,7 @@
 drop user if exists hron;
 drop schema if exists hron;
 
+-- then create user and associated schema
 -- !!! change the password with a safe one !!!
 create user hron identified by 'password';
 create schema hron;
@@ -14,9 +15,7 @@ grant alter routine on hron.* to hron;
 
 use hron;
 
--- the following procedure is used to simplify the setup script
-DELIMITER //
-
+-- helper to be used in the setup script
 create procedure drop_fk_if_exists(
 	in my_table varchar(64),
     in my_fk varchar(64)
@@ -32,6 +31,3 @@ create procedure drop_fk_if_exists(
 		deallocate prepare stmt;
  	end if;
 end;
-
-//
-DELIMITER ;
