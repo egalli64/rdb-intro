@@ -39,7 +39,8 @@ from cloned_item;
 -- create a table by data extraction
 create table coder as
     select employee_id as coder_id, first_name, last_name, hired, salary
-    from employee e join department d using(department_id)
+    from employee e
+    join department d using(department_id)
     where d.name = 'IT';
     
 describe coder;
