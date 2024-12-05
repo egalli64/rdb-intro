@@ -1,5 +1,10 @@
--- An example with a procedure with a local variable, a select into, an if-else
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
 
+    Examples: a procedure with a local variable, a select into, an if-else
+ */
 use hron;
 
 drop procedure if exists total_salaries_coders;

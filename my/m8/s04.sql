@@ -1,5 +1,10 @@
--- examples on conditions
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
 
+    Examples: conditions
+ */
 use hron;
 
 drop procedure if exists condition_example;

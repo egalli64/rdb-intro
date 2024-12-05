@@ -1,4 +1,10 @@
--- examples on local variables
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples: local variables
+ */
 use hron;
 
 select first_name, last_name

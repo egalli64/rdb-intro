@@ -1,5 +1,10 @@
--- trigger
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
 
+    Examples: trigger
+ */
 use hron;
 
 drop trigger if exists before_update_salary;

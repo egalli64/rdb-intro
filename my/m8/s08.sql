@@ -1,4 +1,10 @@
--- a procedure with parameters
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples: a procedure with parameters
+ */
 use hron;
 
 drop procedure if exists get_coder_salary;

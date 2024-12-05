@@ -1,4 +1,10 @@
--- a cursor example
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples: cursor
+ */
 use hron;
 
 drop procedure if exists email_coders;

@@ -1,4 +1,10 @@
--- example on exceptions
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples: exceptions
+ */
 use hron;
 
 drop procedure if exists create_coder;

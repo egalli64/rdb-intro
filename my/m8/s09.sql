@@ -1,4 +1,10 @@
--- example on function
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
+
+    Examples: function
+ */
 use hron;
 
 drop function if exists get_salary;

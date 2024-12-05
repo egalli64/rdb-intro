@@ -1,5 +1,10 @@
--- example: life of a Stored Procedure
+/*
+    Introduction to SQL (on MySQL)
+    
+    https://github.com/egalli64/hron
 
+    Example: life of a Stored Procedure
+ */
 use hron;
 
 drop procedure if exists hello;
