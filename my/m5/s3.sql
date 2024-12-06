@@ -31,7 +31,7 @@ update service
 set name = 'N/A'
 where location_id = 22;
 
--- ??? updating all rows - by mistake ???
+-- ??? updating all rows looks like a mistake ???
 --- when not in autocommit mode, we can rollback to the original state
 update service
 set name = 'mistake!?';
