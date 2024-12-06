@@ -12,17 +12,17 @@ set autocommit = OFF;
 select s.*, l.city
 from service s left outer join location l using (location_id);
 
--- insert a stub record to be completed in a second moment
+-- insert stub records to be completed in a second moment
 insert into service (location_id)
 values (21), (22);
 
 -- when possible, a where with equality check on PK is preferred
--- updating a single row (if found)
+-- stressing that is requested an update for a single row (if found)
 update service
 set name = 'Unknown'
 where service_id = 4;
 
--- updating (potentially) more rows
+-- when required, we can aim to update more rows
 update service
 set name = 'Missing', location_id = 22
 where location_id = 21;
@@ -64,5 +64,5 @@ where manager_id = (
 	where name = 'IT'
 );
 
--- get back to the original salaries
+-- get back to the original status
 rollback;
