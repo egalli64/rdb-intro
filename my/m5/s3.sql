@@ -16,12 +16,17 @@ from service s left outer join location l using (location_id);
 insert into service (location_id)
 values (21), (22);
 
+-- when possible, a where with equality check on PK is preferred
 -- updating a single row (if found)
+update service
+set name = 'Unknown'
+where service_id = 4;
+
+-- updating (potentially) more rows
 update service
 set name = 'Missing', location_id = 22
 where location_id = 21;
 
--- updating (potentially) more rows
 update service
 set name = 'N/A'
 where location_id = 22;
