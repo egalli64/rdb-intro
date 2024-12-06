@@ -6,6 +6,7 @@
     Examples on delete
  */
 use hron;
+set autocommit = OFF;
 
 -- check the current table status
 select *
@@ -13,7 +14,7 @@ from service;
 
 -- delete a single row (or none)
 delete from service
-where service_id = 20;
+where service_id = 5;
 
 -- multiline delete - be extra careful with it!
 delete from service
