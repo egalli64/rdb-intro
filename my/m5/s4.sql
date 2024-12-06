@@ -14,11 +14,11 @@ from service;
 
 -- delete a single row (or none)
 delete from service
-where service_id = 5;
+where service_id = 20;
 
 -- multiline delete - be extra careful with it!
 delete from service
-where service_id > 10;
+where location_id = 22;
 
 -- even more careful here!
 -- anyway this statement won't work, for referential integrity problems
@@ -31,3 +31,5 @@ select * from car_service;
 
 -- deleting all rows from it first makes delete from service working
 delete from car_service;
+
+rollback;
