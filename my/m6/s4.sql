@@ -9,10 +9,19 @@ use hron;
 
 -- phantom read
 start transaction; -- (1)
-	select * from service; -- (2)
-	-- insert into service (service_id, name) values (22, 'T2 insert'); -- (3) executed by T2
-	-- commit; -- (4) executed by T2
-	select * from service; -- (5) if T1 sees a change here, it is phantom read!
+	-- (2)
+	select *
+	from service;
+	
+	-- (3) executed by T2
+	-- insert into service (service_id, name) values (22, 'T2 insert');
+	
+ 	-- (4) executed by T2
+ 	-- commit;
+ 	
+	-- (5) if T1 sees a change here, it is phantom read!
+	select *
+	from service;
 commit; -- (6) executed by T1
 
 -- non-repeatable read
