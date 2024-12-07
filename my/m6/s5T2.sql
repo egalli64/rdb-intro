@@ -3,21 +3,9 @@
     
     https://github.com/egalli64/hron
 
-    Examples on transaction isolation levels -- see s5T2.sql for the other transaction code
+    Examples on transaction isolation levels -- see s5.sql for the other transaction code
  */
 use hron;
-
---
--- cleanup
---
-
-select *
-from service;
-
-start transaction;
-delete from service
-where name like 'Isolation%';
-commit;
 
 --
 -- both transactions serialized, no phantom read
@@ -28,15 +16,15 @@ set transaction isolation level serializable;
 
 -- (2)
 start transaction;
-
 -- (3)
 select *
 from service;
 
 -- (4) T2 hangs until T1 commit
--- insert into service (name) values ('Isolation T2 insert');
+insert into service (name)
+values ('Isolation T2 insert');
 
--- (7)
+-- (5)
 commit;
 
 --
@@ -44,20 +32,23 @@ commit;
 --
 
 -- (1) T1
-set transaction isolation level read committed;
+-- set transaction isolation level read committed;
 
 -- (2)
 start transaction;
+select *
 
 -- (3)
 select * from service
 where name like 'Isolation%';
 
 -- (4) T2
--- update service set name = 'Isolation T2 update' where name like 'Isolation%';
+update service
+set name = 'Isolation T2 update'
+where name like 'Isolation%';
 
 -- (5) T2
--- commit;
+commit;
 
 -- (6) non-repeatable read, both T1 and T2 see the change
 select *
@@ -72,13 +63,15 @@ commit;
 --
 
 -- (1) T1
-set transaction isolation level read uncommitted;
+-- set transaction isolation level read uncommitted;
 
 -- (2)
 start transaction;
 
 -- (3) T2
--- update service set name = 'Isolation dirty' where name like 'Isolation%';
+update service
+set name = 'Isolation dirty'
+where name like 'Isolation%';
 
 -- (4) dirty read
 select *
@@ -99,12 +92,12 @@ set transaction isolation level read uncommitted;
 start transaction;
 
 -- (3) T1
-update service
-set name = concat(name, '1')
-where name like 'Isolation%';
+-- update service set name = concat(name, '1') where name like 'Isolation%';
 
--- (4) T2
--- update service set name = concat(name, '2') where name like 'Isolation%';
+-- (4) T2 waits for T1 commit!
+update service
+set name = concat(name, '2')
+where like 'Isolation%';
 
 -- (4)
 commit;
