@@ -1,7 +1,11 @@
 /*
- * SQL Island - https://sql-island.informatik.uni-kl.de/?lang=en 
- * 
- * Game saved with ID: Wz8BfH1vre
+    Introduction to Relational Database (on MySQL)
+    
+    https://github.com/egalli64/rdb-intro
+
+	Exercise: SQL Island 
+	https://sql-island.informatik.uni-kl.de/?lang=en
+    Game saved with ID: Wz8BfH1vre
  */
 
 -- Given: list of villages
