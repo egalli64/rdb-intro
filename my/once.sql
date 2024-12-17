@@ -1,5 +1,10 @@
--- run it on MySQL as root
--- it creates user and schema hron
+/*
+    Introduction to Relational Database (on MySQL)
+    
+    https://github.com/egalli64/rdb-intro
+
+	Run this script on MySQL as root - it creates user and schema hron
+ */
 
 -- firstly drop anything related with hron, if already there
 drop user if exists hron;
@@ -15,7 +20,7 @@ grant alter routine on hron.* to hron;
 
 use hron;
 
--- helper to be used in the setup script
+-- helper used in the setup script
 create procedure drop_fk_if_exists(
 	in my_table varchar(64),
     in my_fk varchar(64)

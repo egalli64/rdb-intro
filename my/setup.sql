@@ -1,5 +1,12 @@
--- assuming the hron schema has already been created (see once.sql)
--- source this script on MySQL (as hron)
+/*
+    Introduction to Relational Database (on MySQL)
+    
+    https://github.com/egalli64/rdb-intro
+
+	Run this script on MySQL as hron (or any user with rights on hron schema)
+
+	Assuming the hron schema has already been created (see once.sql)
+ */
 
 use hron;
 
