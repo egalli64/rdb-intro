@@ -1,7 +1,7 @@
 /*
-    Introduction to SQL (on MySQL)
+    Introduction to Relational Database (on MySQL)
     
-    https://github.com/egalli64/hron
+    https://github.com/egalli64/rdb-intro
 
     Examples on inner join
  */
@@ -31,7 +31,7 @@ where region_id = 4;
 -- 2. With join, get a single resultset with all the required information
 
 -- Join in the "classic" way
-select region.region_id as 'Region Id', region.name, country_id, country.name
+select region.region_id, region.name, country_id, country.name
 from region, country
 where region.region_id = country.region_id;
 
