@@ -70,7 +70,7 @@ create table item (
 	item varchar(20) primary key,
 	owner int,
 
-	foreign key (owner) references inhabitant (personid)
+	foreign key (owner) references inhabitant (personid) on delete set null
 );
 
 insert into item (item, owner) values
