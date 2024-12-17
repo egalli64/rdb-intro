@@ -49,7 +49,7 @@ from employee
 limit 10;
 
 -- column alias for a concat()
-select concat(last_name, ' ', first_name) as name
+select concat(first_name, ' ', last_name) as name
 from employee
 limit 3;
 
