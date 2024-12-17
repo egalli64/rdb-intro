@@ -1,10 +1,10 @@
-# hron
+# rdb-intro: Introduction to Relational Database
 
-## SQL and PL/SQL on a schema _very_ close to HR by Oracle DB
+## On a schema _very_ close to HR by Oracle DB
 - https://github.com/oracle/db-sample-schemas
 
-## DBMS
-- MySQL 8
+## Tested on these DBMS
+- MySQL 9
 - Oracle DB 21c
 - PostgreSQL 14
 - SQLite 3
