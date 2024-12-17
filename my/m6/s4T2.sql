@@ -1,7 +1,7 @@
 /*
-    Introduction to SQL (on MySQL)
+    Introduction to Relational Database (on MySQL)
     
-    https://github.com/egalli64/hron
+    https://github.com/egalli64/rdb-intro
 
     Examples on transaction anomalies -- see s4.sql for the other transaction code
  */
