@@ -1,7 +1,7 @@
 /*
-    Introduction to SQL (on MySQL)
+    Introduction to Relational Database (on MySQL)
     
-    https://github.com/egalli64/hron
+    https://github.com/egalli64/rdb-intro
 
     An example on emulating a full outer join by union
  */
