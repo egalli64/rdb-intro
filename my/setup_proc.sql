@@ -8,7 +8,7 @@ use hron;
 drop procedure if exists get_employee_car;
 drop procedure if exists get_employee_salary;
 
-DELIMITER //
+-- DELIMITER //
 
 CREATE PROCEDURE get_employee_car(
 	in p_employee_id integer,
@@ -21,11 +21,6 @@ begin
 	where employee_id = p_employee_id;
 end;
 
-//
-DELIMITER ;
-
-DELIMITER //
-
 CREATE PROCEDURE get_employee_salary(
 	in p_employee_id integer,
     out p_salary decimal(8, 2)
@@ -37,5 +32,5 @@ begin
 	where employee_id = p_employee_id;
 end;
 
-//
-DELIMITER ;
+-- //
+-- DELIMITER ;
