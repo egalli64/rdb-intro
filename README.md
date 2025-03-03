@@ -19,5 +19,6 @@
   - Run setup.sql as "hron" to (re)set data
 
 - H2
-  - scripts: java -cp h2.jar org.h2.tools.RunScript -url jdbc:h2:./hron -script <script name>
+  - scripts: java -cp h2.jar org.h2.tools.RunScript -url jdbc:h2:./hron -script <script.sql>
+    - run once.sql and then setup.sql
   - server: java -cp h2.jar org.h2.tools.Server -baseDir .
