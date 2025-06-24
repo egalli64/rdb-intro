@@ -44,8 +44,8 @@ create table country(
 	-- natural primary key
 	country_id char(2) primary key,
 	name varchar(40),
-	-- each country has an associated region
-	region_id integer not null,
+	-- each country could have an associated region
+	region_id integer,
 
     foreign key (region_id) references region (region_id)
 );
